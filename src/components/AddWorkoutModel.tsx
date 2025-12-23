@@ -28,8 +28,8 @@ const WorkoutModal = ({ visible, onClose, mode, workout }: WorkoutModalProps) =>
 
   const [type, setType] = useState<WorkoutType>("running");
   const [intensity, setIntensity] = useState<IntensityType>("low");
+  const [openDropdown, setOpenDropdown] = useState<"type" | "intensity" | null>(null);
 
-  // Pre-fill fields when editing
   useEffect(() => {
     if (mode === "edit" && workout) {
       setType(workout.type);
@@ -53,7 +53,7 @@ const WorkoutModal = ({ visible, onClose, mode, workout }: WorkoutModalProps) =>
   };
 
   return (
-    <Modal visible={visible} transparent animationType="slide" presentationStyle="pageSheet">
+    <Modal visible={visible} animationType="slide" presentationStyle="pageSheet">
       <View style={styles.overlay}>
         <View style={styles.container}>
           <Text style={styles.title}>{mode === "add" ? "Add Workout" : "Edit Workout"}</Text>

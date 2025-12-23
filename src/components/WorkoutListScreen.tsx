@@ -8,7 +8,7 @@ interface WorkoutListProps {
 }
 
 const WorkoutListScreen = ({ type }: WorkoutListProps) => {
-  const { workouts } = useWorkout();
+  const { workouts, markWorkoutComplete } = useWorkout();
   const now = Date.now();
   const ONE_DAY = 24 * 60 * 60 * 1000;
 

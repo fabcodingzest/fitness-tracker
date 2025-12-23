@@ -50,7 +50,6 @@ export default Dropdown;
 const styles = StyleSheet.create({
   container: {
     width: "30%",
-    zIndex: 2,
     backgroundColor: "lightblue",
     alignItems: "center",
     justifyContent: "center",
